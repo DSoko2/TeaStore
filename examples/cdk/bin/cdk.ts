@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import {TeaStoreStack} from "../lib/teastore-stack";
 import {NetworkStack} from "../lib/network-stack";
 import {DbStack} from "../lib/db-stack";
 import {RegistryStack} from "../lib/registry-stack";
@@ -13,9 +12,6 @@ import {WebUiStack} from "../lib/webui-stack";
 import {SharedSecurityGroupsStack} from "../lib/shared-sgs-stack";
 
 const app = new cdk.App();
-
-// Entire application as single nested stack
-new TeaStoreStack(app, "TeaStore");
 
 // TeaStore application as separate, dependent stacks
 const network = new NetworkStack(app, "TSNetwork");
